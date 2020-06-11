@@ -8,6 +8,11 @@ app = Flask(__name__)
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
+cursor = conn.cursor()
+sql = "create table tb_gdp (id bigint, title varchar(128), summary varchar(256), story text);"
+cursor.execute(sql)
+conn.commit()
+
 @app.route("/")
 def home():
     return render_template("home.html")
