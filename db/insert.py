@@ -1,15 +1,19 @@
 import psycopg2
 
 try:
-   connection = psycopg2.connect(user="sysadmin",
-                                  password="pynative@#29",
-                                  host="127.0.0.1",
-                                  port="5432",
-                                  database="postgres_db")
+   DATABASE_URL = os.environ['DATABASE_URL']
+   connection = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+#   connection = psycopg2.connect(user="sysadmin",
+#                                  password="pynative@#29",
+#                                  host="127.0.0.1",
+#                                  port="5432",
+#                                  database="postgres_db")
+   
    cursor = connection.cursor()
 
-   postgres_insert_query = """ INSERT INTO mobile (ID, MODEL, PRICE) VALUES (%s,%s,%s)"""
-   record_to_insert = (5, 'One Plus 6', 950)
+   postgres_insert_query = """ INSERT INTO tb_gdp (DATE, VALUE) VALUES (%s,%s,%s)"""
+   record_to_insert = ('2010-01-01', 950.0)
    cursor.execute(postgres_insert_query, record_to_insert)
 
    connection.commit()
