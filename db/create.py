@@ -15,8 +15,9 @@ try:
     cursor = connection.cursor()
     
     create_table_query = '''CREATE TABLE tb_gdp
-          (DATE date PRIMARY KEY     NOT NULL,
-          VALUE           REAL    NOT NULL); '''
+          (id serial PRIMARY KEY, 
+           DATE date NOT NULL,
+           VALUE REAL NOT NULL); '''
     
     cursor.execute(create_table_query)
     connection.commit()
