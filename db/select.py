@@ -13,7 +13,7 @@ try:
 #                                  database="postgres_db")
 
    cursor = connection.cursor()
-   postgreSQL_select_Query = "select * from mobile"
+   postgreSQL_select_Query = "select * from tb_gdp"
 
    cursor.execute(postgreSQL_select_Query)
    print("Selecting rows from mobile table using cursor.fetchall")
@@ -22,8 +22,8 @@ try:
    print("Print each row and it's columns values")
    for row in mobile_records:
        print("Id = ", row[0], )
-       print("Model = ", row[1])
-       print("Price  = ", row[2], "\n")
+       print("Date = ", row[1])
+       print("Value  = ", row[2], "\n")
 
 except (Exception, psycopg2.Error) as error :
     print ("Error while fetching data from PostgreSQL", error)
