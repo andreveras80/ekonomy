@@ -2,11 +2,16 @@ import os
 import psycopg2
 
 try:
-   connection = psycopg2.connect(user="sysadmin",
-                                  password="pynative@#29",
-                                  host="127.0.0.1",
-                                  port="5432",
-                                  database="postgres_db")
+
+   DATABASE_URL = os.environ['DATABASE_URL']
+   connection = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+#   connection = psycopg2.connect(user="sysadmin",
+#                                  password="pynative@#29",
+#                                  host="127.0.0.1",
+#                                  port="5432",
+#                                  database="postgres_db")
+
    cursor = connection.cursor()
    postgreSQL_select_Query = "select * from mobile"
 
