@@ -1,1 +1,1 @@
-echo "web: python hello.py"
+web: python nao_entre_em_panico.py
