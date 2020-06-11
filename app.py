@@ -46,7 +46,7 @@ def post_something():
 def index():
     return "<h1>Welcome to our server !!</h1>"
 
-@app.route("/about)
+@app.route('/about')
 def about():
     return render_template("about.html")
            
