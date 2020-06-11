@@ -2,3 +2,4 @@ Flask
 Werkzeug
 gunicorn
 pandas-datareader
+psycopg2-binary
