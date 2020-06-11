@@ -13,7 +13,7 @@ try:
    
    cursor = connection.cursor()
 
-   postgres_insert_query = """ INSERT INTO tb_gdp (DATE, VALUE) VALUES (%s,%s,%s)"""
+   postgres_insert_query = """ INSERT INTO tb_gdp (DATE, VALUE) VALUES (%s,%s)"""
    record_to_insert = ('2010-01-01', 950.0)
    cursor.execute(postgres_insert_query, record_to_insert)
 
