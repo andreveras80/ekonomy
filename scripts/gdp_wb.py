@@ -12,5 +12,5 @@ df = web.DataReader(['CPILFESL'], 'fred', start, end)
 
 print(df)
 
-#df.to_csv('../gdp_wb.csv', index = True, header=True)
+df.to_csv('../gdp_wb.csv', index = True, header=True)
 df.to_sql('tb_gdp1', engine)
